@@ -1,11 +1,22 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+a{
+  display: contents;
+  text-decoration: none;
 }

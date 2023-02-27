@@ -1,0 +1,25 @@
+.w-home{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background:linear-gradient(0deg, rgba(3, 0, 28,0.5), rgba(3, 0, 28,0.5)), url('../../assets/movie_cover.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.w-home-pad100{
+    padding-top: 100px;
+}
+
+.w-home__body{
+    padding: 40px 100px;
+}
+
+.w-home__body__moviedetailbox{
+    width: 100%;
+    padding: 20px;
+}

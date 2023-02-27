@@ -1,0 +1,187 @@
+.g-header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: #03001C;
+    opacity: 0.85;
+    z-index: 10;
+}
+
+.g-header__container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.g-header__container-search{
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.g-header__container-search__searchbarcontainer{
+    position: relative;
+    min-width: 60%;
+    width: 80%;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: transparent;
+}
+
+.g-header__container-search__searchbarcontainer-searchbar{
+    background: rgba(255, 255, 255,0.4);
+    opacity: 1;
+    border-radius: 30px;
+    min-width: 100%;
+    padding: 10px 15px;
+    max-height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    width: 75%;
+}
+
+.g-header__container-search__searchbarcontainer-searchbar input{
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+    background-color: transparent;
+    min-width: 100%;
+}
+
+ .g-header__container-search__searchbarcontainer-searchbar input::placeholder{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+} 
+
+ .g-header__container-search__searchbarcontainer-searchbar input::-ms-input-placeholder{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+} 
+
+ .g-header__container-search__searchbarcontainer-searchbar input::-moz-placeholder{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+}
+
+.g-header__container-search__searchbarcontainer-searchbar input::-ms-placeholder{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+}
+
+.g-header__container-search__searchbarcontainer-searchbar input::-webkit-input-placeholder{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255,0.7)!important;
+    opacity: 1;
+}
+
+.g-header__container-search__searchbarcontainer-resultscontainer{
+    position: absolute;
+    top: 40px;
+    background: #0A2647;
+    border: 2px solid #FFFFFF;
+    border-radius: 7px;
+    margin-top: 5px;
+    width: 100%;
+
+}
+
+.g-header__container-search__searchbarcontainer-resultscontainer-result{
+    background: transparent;
+    border-radius: 7px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+.g-header__container-search__searchbarcontainer-resultscontainer-result:hover{
+    background: #2C74B3;
+}
+
+.g-header__container-search__switcher{
+    min-width: 110px;
+    text-align: center;
+    border: 1px solid black;
+    background: rgba(255, 255, 255,0.4);
+    border-radius: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.g-header__container-search__switcher select{
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+}
+
+.g-header__container-search__switcher select option{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background: rgba(217, 217, 217,0.4);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.g-header__container-search__switcher select>option:hover{
+    background: #2C74B3;
+}
+
+.g-header__container-trending{
+    /* width: 18%; */
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.g-header__container-trending:hover{
+    color: #2C74B3;
+    border-bottom: 3px solid #2C74B3;
+}
+
