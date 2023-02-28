@@ -1,0 +1,96 @@
+.g-moviereviewbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    background: rgba(3, 0, 28,0.75);
+    border-radius: 5px;
+}
+
+.g-moviereviewbox-arrowbox{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.g-moviereviewbox-arrowbox:hover{
+    background: rgba(44, 116, 179,0.5);
+}
+
+.g-moviereviewbox-arrowbox img{
+    height: 60px;
+}
+
+.g-moviereviewbox-contentbox{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.g-moviereviewbox-contentbox__avatarbox{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+}
+
+.g-moviereviewbox-contentbox__avatarbox img{
+    padding: 15px 10px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.g-moviereviewbox-contentbox__avatarbox p{
+    width: 100%;
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: rgba(255, 255, 255,0.75);
+    text-align: center;
+}
+
+.g-moviereviewbox-contentbox__review{
+    width: 80%;
+    white-space:pre-wrap;
+    padding: 15px 10px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(255, 255, 255,0.75);
+}
+
+@media only screen and (max-width: 543px) {
+    .g-moviereviewbox-contentbox{
+        flex-direction: column;
+    }
+    
+    .g-moviereviewbox-contentbox__avatarbox{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px;
+    }
+    
+    .g-moviereviewbox-contentbox__avatarbox img{
+        padding: 10px 10px;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .g-moviereviewbox-contentbox__review{
+        text-align: center;
+    }
+}

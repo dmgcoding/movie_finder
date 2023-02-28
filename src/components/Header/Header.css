@@ -7,6 +7,7 @@
     background: #03001C;
     opacity: 0.85;
     z-index: 10;
+    padding: 10px;
 }
 
 .g-header__container{
@@ -170,7 +171,7 @@
     background: #2C74B3;
 }
 
-.g-header__container-trending{
+.g-header__container-menuitem{
     /* width: 18%; */
     font-weight: 500;
     font-size: 18px;
@@ -178,10 +179,31 @@
     color: #FFFFFF;
     cursor: pointer;
     padding-bottom: 10px;
+    padding-right: 15px;
 }
 
-.g-header__container-trending:hover{
+.g-header__container-menuitem a{
+    color: #FFFFFF;
+}
+
+.g-header__container-menuitem:hover{
     color: #2C74B3;
     border-bottom: 3px solid #2C74B3;
+}
+
+@media only screen and (max-width: 543px) {
+    .g-header{
+        height: 170px;
+        border-bottom: 1px solid rgba(255, 255, 255,0.5);
+    }
+
+    .g-header__container{
+        flex-direction: column;
+    }
+    
+    .g-header__container-search{
+        margin-bottom: 15px;
+    }
+
 }
 

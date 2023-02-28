@@ -1,0 +1,112 @@
+.w-trending{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background:linear-gradient(0deg, rgba(3, 0, 28,0.9), rgba(3, 0, 28,0.9)), url('../../assets/ticket-2974645_960_720.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.w-trending-pad100{
+    padding-top: 100px;
+}
+
+.w-trending__body{
+    padding: 20px 50px;
+}
+
+.w-trending__body-title{
+    display: block;
+    width: 100%;
+    padding: 0px 0px 60px 0px;
+}
+
+.w-trending__body-title__container{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.w-trending__body-title__container h2{
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 41px;
+    color: #FFFFFF;
+    margin-right: 25px;
+}
+
+.w-trending__body-movies{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 15px 0;
+}
+
+.w-trending__body-movies__moviecard{
+    cursor: pointer;
+    margin: 15px 15px 20px 15px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.w-trending__body-movies__moviecard p{
+    margin: 2px;
+}
+
+.w-trending__body-movies__moviecard img{
+    width: 100%;
+    /* background: #D9D9D9; */
+    border: 5px solid #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
+
+.w-trending__body-movies__moviecard-title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
+
+.w-trending__body-movies__moviecard-votes{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.w-trending__body-movies__moviecard-year{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 543px) {
+    .w-trending-pad100{
+        padding-top: 170px;
+    }
+
+    .w-trending__body{
+        padding: 20px 10px;
+    }
+
+    .w-trending__body-movies__moviecard{
+        margin: 15px 15px 20px 15px;
+        width: 40%;
+    }
+}

@@ -2,6 +2,7 @@
 import React,{useState} from 'react'
 import './Header.css'
 import CustomDropDown from '../CustomDropDown/CustomDropDown'
+import { Link } from 'react-router-dom'
 
 const items = [
     {
@@ -25,7 +26,7 @@ const Header = () => {
             <div className="g-header__container-search">
                 <div className="g-header__container-search__searchbarcontainer">
                     <div className="g-header__container-search__searchbarcontainer-searchbar">
-                        <input type='text' id='movie_search_query' placeholder='Search for movie name'/>
+                        <input type='text' id='movie_search_query' placeholder='Search...'/>
                     </div>
                     <div className="g-header__container-search__searchbarcontainer-resultscontainer" style={{display: 'none'}}>
                         <div className="g-header__container-search__searchbarcontainer-resultscontainer-result">
@@ -43,7 +44,8 @@ const Header = () => {
                     <CustomDropDown items={items} selectedItem={selectedItem} callback={(val)=>{setSelectedItem(val)}}/>
                 </div>
             </div>
-            <div className="g-header__container-trending">Trending</div>
+            <div className="g-header__container-menuitem"><Link to='/'>Home</Link></div>
+            <div className="g-header__container-menuitem"><Link to='trending'>Trending</Link></div>
         </div>
     </div>
   )

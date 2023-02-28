@@ -23,3 +23,27 @@
     width: 100%;
     padding: 20px;
 }
+
+.w-home__body__moviereviewbox{
+    width: 100%;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width: 543px) {
+    .w-home-pad100{
+        padding-top: 170px;
+    }
+
+    .w-home__body{
+        padding: 40px 0px;
+    }
+
+    .w-home__body__moviedetailbox{
+        padding: 10px;
+    }
+
+    .w-home__body__moviereviewbox{
+        padding: 10px;
+    }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import MovieDetailsBox from '../../components/MovieDetailsBox/MovieDetailsBox'
+import MovieReviewBox from '../../components/MovieReviewBox/MovieReviewBox'
 import './Home.css'
 
 const Home = () => {
@@ -13,7 +14,9 @@ const Home = () => {
             <div className="w-home__body__moviedetailbox">
                 <MovieDetailsBox movie={null}/>
             </div>
-            <div className="w-home__body__moviereviewbox"></div>
+            <div className="w-home__body__moviereviewbox">
+                <MovieReviewBox />
+            </div>
         </div>
         <Footer/>
     </div>

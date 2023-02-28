@@ -9,6 +9,7 @@
 }
 
 .g-moviedetailbox-img{
+    order: 1;
     width: 42%;
 }
 
@@ -17,6 +18,7 @@
 }
 
 .g-moviedetailbox-details{
+    order: 2;
     width: 58%;
     padding: 25px;
 }
@@ -90,4 +92,25 @@
     font-size: 32px;
     line-height: 38px;
     color: #2C74B3;
+}
+
+@media only screen and (max-width: 543px) {
+    .g-moviedetailbox{
+        flex-direction: column;
+        align-items:stretch;
+        background: rgba(3, 0, 28,0.75);
+        border-radius: 5px;
+        /* border: 1px solid red; */
+    }
+    
+    .g-moviedetailbox-img{
+        order: 2;
+        width: 100%;
+    }
+    
+    .g-moviedetailbox-details{
+        order: 1;
+        width: 100%;
+        padding: 15px;
+    }
 }
