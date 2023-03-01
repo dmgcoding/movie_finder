@@ -25,7 +25,7 @@
 
 .g-moviedetailbox-details h1{
     font-weight: 700;
-    font-size: 50px;
+    font-size: 46px;
     line-height: 59px;
     color: #FFFFFF;
     margin: 0;
@@ -33,7 +33,7 @@
 
 .g-moviedetailbox-details h2{
     /* font-weight: 500; */
-    font-size: 30px;
+    font-size: 28px;
     line-height: 35px;
     color: #2C74B3;
     margin: 5px 0;
@@ -53,7 +53,7 @@
 
 .g-moviedetailbox-details__studio-genre{
     font-weight: 500;
-    font-size: 30px;
+    font-size: 27px;
     line-height: 35px;
     color: #2C74B3;
     padding: 5px 0;
@@ -61,7 +61,7 @@
 
 .g-moviedetailbox-details__studio-studio{
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 28px;
     color: #FFFFFF;
 }
@@ -81,7 +81,7 @@
 
 .g-moviedetailbox-details__statboxes-box-title{
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 28px;
     color: #FFFFFF;
     padding: 5px 0;
@@ -89,12 +89,12 @@
 
 .g-moviedetailbox-details__statboxes-box-stat{
     font-weight: 500;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 38px;
     color: #2C74B3;
 }
 
-@media only screen and (max-width: 543px) {
+@media only screen and (max-width: 900px) {
     .g-moviedetailbox{
         flex-direction: column;
         align-items:stretch;

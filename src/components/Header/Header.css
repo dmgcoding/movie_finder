@@ -107,6 +107,7 @@
 }
 
 .g-header__container-search__searchbarcontainer-resultscontainer{
+    height: 350px;
     position: absolute;
     top: 40px;
     background: #0A2647;
@@ -114,7 +115,8 @@
     border-radius: 7px;
     margin-top: 5px;
     width: 100%;
-
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .g-header__container-search__searchbarcontainer-resultscontainer-result{
