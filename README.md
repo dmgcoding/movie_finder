@@ -25,7 +25,7 @@ This is a project made for fun. You can search for movies/tv shows, see trending
 
     1. Clone the repo 
     2. make a file named '.env.local' in root
-    3. add REACT_APP_TMDB_APIKEY=<<tmdb_api_key>>
+    3. add REACT_APP_TMDB_APIKEY=<<tmdb_api_key>> to that file
     4. replace <<tmdb_api_key>> with your tmdb api key. you can get an api key by registering free.
     5. open cmd in root. type 'npm start' and enter.
     6. go to 'localhost:3000'
