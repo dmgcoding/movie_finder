@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background:linear-gradient(0deg, rgba(3, 0, 28,0.5), rgba(3, 0, 28,0.5)), url('../../assets/movie_cover.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

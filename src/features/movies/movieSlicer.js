@@ -1,5 +1,6 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { saveSelectedMovieId, saveSelectedMovieType,getSelectedMovieIdFromStorage,getSelectedMovieTypeFromStorage } from '../storage/storage'
 
 const items = [
     {
@@ -16,9 +17,9 @@ const intialstate = {
     query: '',
     media_type: items[0].value,
     movie_results: [],
-    selected_movie_id: 299536, //id 
+    selected_movie_id: getSelectedMovieIdFromStorage() === null ? 299536 : getSelectedMovieIdFromStorage(), //id 
     status: 'idle',
-    error: null  
+    selected_movie_type: getSelectedMovieTypeFromStorage() === null ? 'movie' : getSelectedMovieTypeFromStorage()
   }
 
 export const movieSlice = createSlice({
@@ -31,8 +32,10 @@ export const movieSlice = createSlice({
         if(state.query === '')state.movie_results = []
     },
     setSelectedMovie: (state, action)=>{
-        state.selected_movie_id = action.payload //id of the movie selected
-        console.log('state.selected_movie_id',state.selected_movie_id)
+        state.selected_movie_id = action.payload.id //id of the movie selected
+        saveSelectedMovieId(action.payload.id)//save in local storage
+        state.selected_movie_type = action.payload.type
+        saveSelectedMovieType(action.payload.type)//save in local storage
         state.query = ''
         state.movie_results = []
     },

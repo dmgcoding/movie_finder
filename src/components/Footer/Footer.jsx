@@ -10,11 +10,11 @@ const Footer = () => {
         <div className="footer__bg"></div>
         <div className="footer__content">
             <p>Designed and developed by shehandmg</p>
-            <div className='footer__content__repolink'>
+            <a target='_blank' href='https://github.com/dmgcoding/movie_finder'><div className='footer__content__repolink'>
                 <img src={github_icon} alt='github' width={25} />
-                <a href='#'><p>View Code</p></a>
-            </div>
-            <a><p>Powered by The Movie DB</p></a>
+                <p>View Code</p>
+            </div></a>
+            <a target='_blank' href='https://www.themoviedb.org/'><p>Powered by The Movie DB</p></a>
         </div>
     </div>
   )

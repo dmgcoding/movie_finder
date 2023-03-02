@@ -12,23 +12,22 @@ const items = [
         desc: 'Movie'
     },
     {
-        value: 'tv_shows',
+        value: 'tv',
         desc: 'TV Shows'
     }
 ]
 
 const Trending = () => {
     const api_key = process.env.REACT_APP_TMDB_APIKEY
-    const [selectedItem, setSelectedItem] = useState(items[0])
+    const [selectedMediaType, setselectedMediaType] = useState(items[0])
     const [trendings, setTrendings] = useState([])
-    // const [errors, setErrors] = useState('')
 
     useEffect(()=>{
         getTrending()
-    },[selectedItem])
+    },[selectedMediaType])
 
     function getTrending(){
-        if(selectedItem.value === 'movie'){
+        if(selectedMediaType.value === 'movie'){
             getTrendingMovies()
         }else{
             getTrendingTvShows()
@@ -82,7 +81,7 @@ const Trending = () => {
             <div className="w-trending__body-title">
                 <div className="w-trending__body-title__container">
                     <h2>Trending</h2>
-                    <div className="g-header__container-search__switcher"><CustomDropDown items={items} selectedItem={selectedItem} callback={(val)=>{setSelectedItem(val)}}/></div>
+                    <div className="g-header__container-search__switcher"><CustomDropDown items={items} selectedItem={selectedMediaType} callback={(val)=>{setselectedMediaType(val)}}/></div>
                 </div>
             </div>
             <div className="w-trending__body-movies">

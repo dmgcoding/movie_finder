@@ -41,11 +41,13 @@
     align-items: center;
     justify-content: center;
     padding: 15px 20px;
+    aspect-ratio: 1/1;
 }
 
 .g-moviereviewbox-contentbox__avatarbox img{
     padding: 15px 10px;
     width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 

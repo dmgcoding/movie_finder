@@ -5,6 +5,7 @@ import CustomDropDown from '../CustomDropDown/CustomDropDown'
 import { Link } from 'react-router-dom'
 import { fetchMovies, setSelectedMovie, setMediaType, setQuery } from '../../features/movies/movieSlicer'
 import { useDispatch,useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const items = [
     {
@@ -25,10 +26,15 @@ const Header = () => {
     let movies = useSelector(state=>state.movieSlice.movie_results)
     let media_type = useSelector(state=>state.movieSlice.media_type)
 
+    const navigate = useNavigate()
+
     const [selectedMediaType, setSelectedMediaType] = useState(items[0])
 
     //pull movies on query and mediatype change
     useEffect(()=>{
+        if(media_type === 'tv'){//set media type according to state
+            setSelectedMediaType(items[1])
+        }
         if(status === 'idle' || status === 'success'){
             pullMovies()
         }
@@ -39,17 +45,20 @@ const Header = () => {
     }
 
     function onMovieItemClicked(id){
-        dispatch(setSelectedMovie(id))
+        //set selectedMovieId
+        dispatch(setSelectedMovie({id: id, type: selectedMediaType.value}))
+        //route to home
+        navigate('/')
     }
 
     function renderResults(){
         if(movies.length > 0){
             return (
-                <div className="g-header__container-search__searchbarcontainer-resultscontainer">
-                    {movies.map(m=>(
-                        <div id={m.id} className="g-header__container-search__searchbarcontainer-resultscontainer-result" onClick={()=>{onMovieItemClicked(m.id)}}>
+                <div id='results' className="g-header__container-search__searchbarcontainer-resultscontainer">
+                    {movies.map((m,index)=>(
+                        <div key={index} className="g-header__container-search__searchbarcontainer-resultscontainer-result" onClick={()=>{onMovieItemClicked(m.id)}}>
                         {media_type === 'movie' ? m.original_title : m.original_name}
-                    </div>
+                        </div>
                     ))}
                 </div>
             )
@@ -76,7 +85,7 @@ const Header = () => {
                     {renderResults()}
                 </div>
                 <div className="g-header__container-search__switcher">
-                    <CustomDropDown items={items} selectedItem={selectedMediaType} callback={(val)=>{toggleSelectedMediaType(val)}}/>
+                    <CustomDropDown id='search_switcher' items={items} selectedItem={selectedMediaType} callback={(val)=>{toggleSelectedMediaType(val)}}/>
                 </div>
             </div>
             <div className="g-header__container-menuitem"><Link to='/'>Home</Link></div>

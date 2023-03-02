@@ -4,8 +4,12 @@ import './MovieDetailsBox.css'
 import {MOVIES} from '../../data/movies'
 
 
-const MovieDetailsBox = ({mediatype,m}) => {
+const MovieDetailsBox = ({m}) => {
     if(m === null || m === undefined)m = MOVIES.default_movie
+
+    let mediatype = 'tv'
+
+    if(m.episode_run_time === undefined)mediatype = 'movie'
 
     function getGenres(){
         let list = []
@@ -39,15 +43,14 @@ const MovieDetailsBox = ({mediatype,m}) => {
         return 'http://image.tmdb.org/t/p/w500'+m.poster_path
     }
 
-    // return (<div></div>)
-
   return (
     <div className='g-moviedetailbox'>
-        <div className='g-moviedetailbox-img'>
+        {m === undefined ? <></> : (
+            <><div className='g-moviedetailbox-img'>
             <img src={buildPosterPath()} alt='movie poster'/>
         </div>
         <div className='g-moviedetailbox-details'>
-            <h1>{m.original_title}</h1>
+            <h1>{mediatype === 'movie' ? m.original_title : m.name}</h1>
             <h2>{m.tagline}</h2>
             <p>{m.overview}</p>
             <div className="g-moviedetailbox-details__studio">
@@ -60,23 +63,24 @@ const MovieDetailsBox = ({mediatype,m}) => {
             </div>
             <div className="g-moviedetailbox-details__statboxes">
                 <div className="g-moviedetailbox-details__statboxes-box">
-                    <div className="g-moviedetailbox-details__statboxes-box-title">Release Date</div>
-                    <div className="g-moviedetailbox-details__statboxes-box-stat">{m.release_date}</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-title">{mediatype === 'movie'? 'Release Date' : 'First Air Date'}</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-stat">{mediatype === 'movie' ? m.release_date : m.first_air_date}</div>
                 </div>
                 <div className="g-moviedetailbox-details__statboxes-box">
-                    <div className="g-moviedetailbox-details__statboxes-box-title">Running Time:</div>
-                    <div className="g-moviedetailbox-details__statboxes-box-stat">{m.runtime} mins</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-title">{mediatype ===  'movie' ? 'Running Time:' : 'Status'}</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-stat">{mediatype === 'movie' ? `${m.runtime} mins` : m.status} </div>
                 </div>
                 <div className="g-moviedetailbox-details__statboxes-box">
-                    <div className="g-moviedetailbox-details__statboxes-box-title">Box Office:</div>
-                    <div className="g-moviedetailbox-details__statboxes-box-stat">{getRevenue()}</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-title">{mediatype === 'movie' ? 'Box Office:' : 'Number of episodes'}</div>
+                    <div className="g-moviedetailbox-details__statboxes-box-stat">{mediatype === 'movie' ? getRevenue() : m.number_of_episodes}</div>
                 </div>
                 <div className="g-moviedetailbox-details__statboxes-box">
                     <div className="g-moviedetailbox-details__statboxes-box-title">Vote Average:</div>
                     <div className="g-moviedetailbox-details__statboxes-box-stat">{m.vote_average} / 10</div>
                 </div>
             </div>
-        </div>
+        </div></>
+        )}
     </div>
   )
 }
