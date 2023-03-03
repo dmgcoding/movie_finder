@@ -2,6 +2,7 @@ import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { saveSelectedMovieId, saveSelectedMovieType,getSelectedMovieIdFromStorage,getSelectedMovieTypeFromStorage } from '../storage/storage'
 
+//media types
 const items = [
     {
         value: 'movie',
@@ -13,6 +14,7 @@ const items = [
     }
   ]
 
+  //initial state to the slice
 const intialstate = {
     query: '',
     media_type: items[0].value,
@@ -26,12 +28,16 @@ export const movieSlice = createSlice({
   name: 'movieSlice',
   initialState: intialstate,
   reducers: {
+    //sets the search query in state
     setQuery: (state, action) => {
         console.log(state.movie_results)
         state.query = action.payload
+        //if search query is cleared also empty the movie_results list
         if(state.query === '')state.movie_results = []
     },
+    //set the selected movie details(id,mediatype)
     setSelectedMovie: (state, action)=>{
+        //action.payload >> {id: <movie_id>,type: 'tv'} type: 'tv'/'movie'
         state.selected_movie_id = action.payload.id //id of the movie selected
         saveSelectedMovieId(action.payload.id)//save in local storage
         state.selected_movie_type = action.payload.type
@@ -39,7 +45,9 @@ export const movieSlice = createSlice({
         state.query = ''
         state.movie_results = []
     },
+    //set media type in state
     setMediaType: (state,action)=>{
+        //eg action.payload :: {value: 'movie', desc: 'Movie'}
         if(action.payload.value === 'movie'){
             state.media_type = items[0].value
         }else if(action.payload.value === 'tv'){
@@ -47,6 +55,7 @@ export const movieSlice = createSlice({
         }
     }
   },
+  //for redux thunk functions
   extraReducers: (builder)=>{
     builder.addCase(fetchMovies.pending,(state,action)=>{
         state.status = 'loading'
@@ -63,6 +72,7 @@ export const movieSlice = createSlice({
   }
 })
 
+//fetch movies list with search query
 export const fetchMovies = createAsyncThunk('movies/fetchMovies',async(payload)=>{
     const media_type = payload.media_type
     const query = payload.query

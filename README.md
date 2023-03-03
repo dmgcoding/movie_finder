@@ -2,6 +2,8 @@
 
 This is a project made for fun. You can search for movies/tv shows, see trending movies/tv shows by today, see details and reviews of the selected movie/tv show.
 
+Live demo: https://movie-finder-tau.vercel.app/
+
 ## dev details
 
 * Node version: 18.12.1

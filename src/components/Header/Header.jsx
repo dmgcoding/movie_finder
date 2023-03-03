@@ -40,6 +40,7 @@ const Header = () => {
         }
     },[query,media_type])
   
+    //when qeury is changing fetch movies with that query and set the results in redux state
     function pullMovies(){
       if(query !== '')dispatch(fetchMovies({media_type: media_type,query: query}))
     }
@@ -51,6 +52,7 @@ const Header = () => {
         navigate('/')
     }
 
+    //show results when movies list is not empty
     function renderResults(){
         if(movies.length > 0){
             return (

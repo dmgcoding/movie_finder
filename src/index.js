@@ -23,6 +23,7 @@ const router = createBrowserRouter([
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//wrap the app with redux provider to provide redux store
 root.render(
   <React.StrictMode>
     <Provider store={store}><RouterProvider router={router}/></Provider>

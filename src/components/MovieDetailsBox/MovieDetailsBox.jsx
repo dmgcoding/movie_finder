@@ -5,10 +5,13 @@ import {MOVIES} from '../../data/movies'
 
 
 const MovieDetailsBox = ({m}) => {
+    //if m(movie) is null or undefined load a default movie saved localy as json
     if(m === null || m === undefined)m = MOVIES.default_movie
 
     let mediatype = 'tv'
 
+    //only tv shows has parameter 'episode_run_time'
+    //if theres no such parameter media type is movie
     if(m.episode_run_time === undefined)mediatype = 'movie'
 
     function getGenres(){

@@ -6,11 +6,17 @@ import review_avatar from '../../assets/avatar.png'
 import './MovieReviewBox.css'
 
 const MovieReviewBox = ({reviews}) => {
+    //eg reviews: {id: <id>,page: <page>,results: [...],...}
+    
+    //set current review from middle of the reviews list
     const currentNo = ((+reviews.results.length - 1)/2).toFixed(0)
     const initialReview = reviews.results[currentNo]
     const [currentReview, setCurrentReview] = useState(initialReview)
     const [num, setNum] = useState(currentNo)
 
+    //some reviews don't have author details. if it is null return null 
+    //some have whole url return same 
+    //some only get name part.for that build the img url and return
     function buildImgUrl(){
         if(currentReview === undefined)return null
         let str = currentReview.author_details.avatar_path
@@ -21,7 +27,7 @@ const MovieReviewBox = ({reviews}) => {
             return null
         }
         else if(currentReview.author_details.avatar_path.includes('https:')){
-            str = str.substring(1)
+            str = str.substring(1)//url comes like '/https://... so remove the first '/'
         }else{
             str = 'http://image.tmdb.org/t/p/w500'+str
         }

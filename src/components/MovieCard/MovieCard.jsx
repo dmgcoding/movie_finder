@@ -20,6 +20,7 @@ const MovieCard = ({movie}) => {
     return arr.length > 0 ? arr[0] : ''
   }
 
+  //on movie card click set selectedMovie in redux state and navigate to home
   function selectMovie(){
     //set selectedMovieId
     dispatch(setSelectedMovie({id: movie.id,type: mediatype}))

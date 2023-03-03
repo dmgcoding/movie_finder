@@ -6,6 +6,7 @@ import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import axios from 'axios'
 
+//media types
 const items = [
     {
         value: 'movie',
@@ -26,6 +27,7 @@ const Trending = () => {
         getTrending()
     },[selectedMediaType])
 
+    //fetch and set trending movie list of the selected media type
     function getTrending(){
         if(selectedMediaType.value === 'movie'){
             getTrendingMovies()

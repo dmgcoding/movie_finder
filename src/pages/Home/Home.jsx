@@ -21,6 +21,7 @@ const Home = () => {
     pullReviews()
   },[selectedMovieId])
 
+  //fetch and set selected movie details
   async function pullMovieDetails(){
     const api_key = process.env.REACT_APP_TMDB_APIKEY
       let url = 'https://api.themoviedb.org/3/movie/'+selectedMovieId+'?api_key='+api_key+'&language=en-US'
@@ -36,6 +37,7 @@ const Home = () => {
       }
   }
 
+  //fetch and set reviews
   async function pullReviews(){
     const api_key = process.env.REACT_APP_TMDB_APIKEY
       let url = 'https://api.themoviedb.org/3/movie/'+selectedMovieId+'/reviews?api_key='+api_key+'&language=en-US'
@@ -53,6 +55,7 @@ const Home = () => {
       }
   }
 
+  //api gives only name part of the poster. builder the url with that
   function buildBgImgUrl(movie){
     if(movieDetails !== null){
       return 'https://image.tmdb.org/t/p/original'+movie.backdrop_path
